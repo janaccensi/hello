@@ -1,14 +1,21 @@
-# hello
+# Personal Portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+Welcome to my personal portfolio! This project showcases my skills, experience, and projects.
 
-## Recommended IDE Setup
+## About Me
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+I'm a passionate developer focused on creating elegant and functional web applications. This portfolio demonstrates my expertise and creative approach to problem-solving.
 
-## Customize configuration
+## Portfolio Highlights
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Responsive design
+- Interactive project showcases
+- Skills and experience section
+- Contact information
+
+## Tech Stack
+
+This portfolio is built with Vue 3 and Vite, providing a fast, modern development experience.
 
 ## Project Setup
 
@@ -16,14 +23,16 @@ See [Vite Configuration Reference](https://vite.dev/config/).
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Development Server
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Build for Production
 
 ```sh
 npm run build
 ```
+
+Feel free to explore my work and get in touch for collaboration opportunities!
