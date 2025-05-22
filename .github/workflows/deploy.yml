@@ -4,6 +4,12 @@ on:
   push:
     branches: [ main ]
 
+# Donar permisos explícits per escriure al repositori
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -30,3 +36,4 @@ jobs:
         with:
           folder: dist
           branch: gh-pages
+          token: ${{ secrets.GITHUB_TOKEN }}
