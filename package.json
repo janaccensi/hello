@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build && cp public/404.html dist/",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist --repo https://github.com/janaccensi/hello.git --branch gh-pages"
   },
   "dependencies": {
     "vue": "^3.5.13"
