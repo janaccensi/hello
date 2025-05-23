@@ -14,8 +14,8 @@ html {
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: #ffffff;
+  color: var(--color-text);
+  background-color: var(--color-background);
 }
 
 #app {
@@ -27,15 +27,56 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 1rem;
+  color: var(--color-heading);
 }
 
 p {
   margin-bottom: 1rem;
 }
 
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--vt-c-blue-light);
+}
+
 /* Smooth transitions */
 * {
   transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background-color: var(--vt-c-blue);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--vt-c-blue-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 62, 255, 0.3);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--vt-c-blue);
+  color: var(--vt-c-blue);
+}
+
+.btn-outline:hover {
+  background-color: var(--vt-c-blue);
+  color: white;
 }
 
 /* Utility classes */

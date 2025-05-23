@@ -66,10 +66,14 @@
   </section>
 </template>
 
+<script setup>
+// No script needed for this component
+</script>
+
 <style scoped>
 .about {
-  padding: 5rem 0;
-  background: #f8f9fa;
+  padding: 100px 0;
+  background-color: var(--vt-c-white);
 }
 
 .container {
@@ -79,59 +83,71 @@
 }
 
 .section-title {
-  font-size: 2.5rem;
   text-align: center;
   margin-bottom: 3rem;
-  color: #2c3e50;
-  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--vt-c-blue);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--vt-c-blue);
+  border-radius: 2px;
 }
 
 .about-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 2fr;
   gap: 4rem;
-  margin-bottom: 4rem;
   align-items: center;
 }
 
 .about-text {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #555;
+  color: var(--vt-c-black);
 }
 
 .intro {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
   font-weight: 500;
-  color: #2c3e50;
   margin-bottom: 1.5rem;
+  color: var(--vt-c-blue-dark);
 }
 
-.about-text p {
+p {
   margin-bottom: 1.5rem;
+  line-height: 1.7;
 }
 
 .stats {
   display: flex;
-  gap: 2rem;
   margin-top: 2rem;
+  justify-content: space-between;
+  max-width: 400px;
 }
 
 .stat {
   text-align: center;
 }
 
-.stat .number {
+.number {
   display: block;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  color: #3498db;
+  color: var(--vt-c-blue);
   margin-bottom: 0.25rem;
 }
 
-.stat .label {
+.label {
   font-size: 0.9rem;
-  color: #666;
+  color: var(--vt-c-black-soft);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -142,84 +158,69 @@
 }
 
 .image-placeholder {
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border: 6px solid var(--vt-c-blue);
+  box-shadow: 0 10px 30px rgba(0, 62, 255, 0.2);
+}
+
+.education {
+  margin-top: 5rem;
 }
 
 .education h3 {
-  font-size: 2rem;
-  color: #2c3e50;
+  font-size: 1.75rem;
   margin-bottom: 2rem;
-  text-align: center;
+  color: var(--vt-c-blue);
 }
 
 .education-items {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
 }
 
 .education-item {
-  background: white;
+  background-color: #f9f9f9;
   padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  border-left: 4px solid #3498db;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 4px solid var(--vt-c-blue);
+}
+
+.education-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 62, 255, 0.15);
 }
 
 .education-item h4 {
-  font-size: 1.3rem;
-  color: #2c3e50;
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  color: var(--vt-c-blue-dark);
 }
 
 .institution {
   font-weight: 600;
-  color: #3498db;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .period {
-  color: #666;
   font-size: 0.9rem;
+  color: #666;
   margin-bottom: 1rem;
-}
-
-.details {
-  color: #555;
-  line-height: 1.5;
 }
 
 @media (max-width: 968px) {
   .about-content {
     grid-template-columns: 1fr;
     gap: 2rem;
-    text-align: center;
   }
   
-  .education-items {
-    grid-template-columns: 1fr;
-  }
-  
-  .stats {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 640px) {
-  .about {
-    padding: 3rem 0;
-  }
-  
-  .container {
-    padding: 0 1rem;
+  .about-image {
+    order: -1;
   }
   
   .image-placeholder {
@@ -228,8 +229,21 @@
   }
   
   .stats {
-    flex-direction: column;
-    gap: 1rem;
+    margin: 2rem auto;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .education-items {
+    grid-template-columns: 1fr;
+  }
+  
+  .about {
+    padding: 80px 0;
   }
 }
 </style>

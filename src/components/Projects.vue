@@ -132,8 +132,9 @@ const projects = ref([
 
 <style scoped>
 .projects {
-  padding: 5rem 0;
-  background: white;
+  padding: 100px 0;
+  background-color: var(--vt-c-black);
+  color: white;
 }
 
 .container {
@@ -143,44 +144,63 @@ const projects = ref([
 }
 
 .section-title {
-  font-size: 2.5rem;
   text-align: center;
   margin-bottom: 3rem;
-  color: #2c3e50;
-  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--vt-c-blue-light);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--vt-c-blue-light);
+  border-radius: 2px;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 2rem;
+  margin-top: 1rem;
 }
 
 .project-card {
-  background: white;
-  border-radius: 15px;
+  background-color: var(--vt-c-black-soft);
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  border: 1px solid #f0f0f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 62, 255, 0.3);
+  border-color: var(--vt-c-blue);
 }
 
 .project-image {
   height: 200px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--vt-c-blue-dark), var(--vt-c-black));
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
 }
 
 .project-placeholder {
-  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .project-content {
@@ -188,16 +208,16 @@ const projects = ref([
 }
 
 .project-content h3 {
-  font-size: 1.3rem;
-  color: #2c3e50;
-  margin-bottom: 1rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--vt-c-blue-light);
 }
 
 .project-description {
-  color: #555;
+  font-size: 0.95rem;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1rem;
 }
 
 .project-tech {
@@ -208,13 +228,12 @@ const projects = ref([
 }
 
 .tech-tag {
-  background: #f8f9fa;
-  color: #495057;
+  font-size: 0.75rem;
   padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
+  background-color: rgba(0, 62, 255, 0.2);
+  color: var(--vt-c-blue-light);
+  border-radius: 50px;
   font-weight: 500;
-  border: 1px solid #e9ecef;
 }
 
 .project-links {
@@ -226,46 +245,36 @@ const projects = ref([
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
   text-decoration: none;
+  font-size: 0.9rem;
   font-weight: 500;
-  transition: all 0.3s ease;
-  border: 2px solid #3498db;
-  color: #3498db;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: var(--vt-c-blue-dark);
+  transition: all 0.3s;
 }
 
 .project-link:hover {
-  background: #3498db;
-  color: white;
+  background-color: var(--vt-c-blue);
 }
 
 .project-link.demo {
-  border-color: #2ecc71;
-  color: #2ecc71;
+  background-color: transparent;
+  border: 1px solid var(--vt-c-blue);
 }
 
 .project-link.demo:hover {
-  background: #2ecc71;
-  color: white;
+  background-color: var(--vt-c-blue);
 }
 
 @media (max-width: 768px) {
-  .projects {
-    padding: 3rem 0;
-  }
-  
-  .container {
-    padding: 0 1rem;
-  }
-  
   .projects-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
   }
   
-  .project-links {
-    flex-direction: column;
+  .section-title {
+    font-size: 2rem;
   }
 }
 </style>

@@ -39,68 +39,64 @@ header {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(10, 10, 10, 0.4);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   border-bottom: 1px solid transparent;
 }
 
 header.scrolled {
-  background: rgba(255, 255, 255, 0.98);
-  border-bottom-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  background: rgba(10, 10, 10, 0.9);
+  border-bottom-color: var(--vt-c-blue);
+  box-shadow: 0 2px 20px rgba(0, 62, 255, 0.3);
 }
 
 .nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo a {
-  font-size: 1.5rem;
+  color: var(--vt-c-blue-light);
   font-weight: 700;
-  color: #2c3e50;
+  font-size: 1.5rem;
   text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.logo a:hover {
-  color: #3498db;
+  letter-spacing: 0.5px;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  margin: 0;
-  padding: 0;
   gap: 2rem;
 }
 
 .nav-links a {
-  color: #2c3e50;
+  color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
+  font-size: 1rem;
   position: relative;
-}
-
-.nav-links a:hover {
-  color: #3498db;
+  padding: 0.5rem 0;
 }
 
 .nav-links a::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: 0;
   left: 0;
   width: 0;
   height: 2px;
-  background: #3498db;
-  transition: width 0.3s ease;
+  background-color: var(--vt-c-blue);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--vt-c-blue-light);
 }
 
 .nav-links a:hover::after {
@@ -112,12 +108,31 @@ header.scrolled {
     padding: 1rem;
   }
   
+  .logo a {
+    font-size: 1.2rem;
+  }
+  
   .nav-links {
     gap: 1rem;
   }
   
   .nav-links a {
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .nav-links {
+    gap: 0.75rem;
+  }
+  
+  .nav-links a {
+    font-size: 0.8rem;
   }
 }
 </style>
